@@ -16,44 +16,44 @@ export class LoginComponent implements OnInit {
   user;
   status;
   model: any = {};
-  token ; 
+  token;
   username;
   firstFormGroup: FormGroup;
   password;
-  constructor(  private obj:HttpService,  private _nav: Router ) { }
+  constructor(private obj: HttpService, private _nav: Router) { }
   personal;
   ngOnInit() {
     this.viewuser();
   }
-  viewuser(){
- 
-    
-    this.obj.get_user( ).subscribe(
-      data => {
-          this.personal = data.json();
-      
+  viewuser() {
 
-    
+
+    this.obj.get_user().subscribe(
+      data => {
+        this.personal = data.json();
+
+
+
       });
   }
-  
-  onLogin() {
-   
-     console.log(this.model.username, this.model.password)
-    
-          this.obj.login(this.model.username, this.model.password).subscribe(
-            datasss => {
 
-              // this._nav.navigate(['/dashboard'])
-              Swal.fire({
-                type: 'success',
-                title: 'You have successfully logged ',
-                showConfirmButton: false,
-                timer: 1500, width: '512px',
-              });
-              
-            }
-      );
-     
-    }
+  onLogin() {
+
+    console.log(this.model.username)
+
+    this.obj.login(this.model.username, this.model.password).subscribe(
+      datasss => {
+
+        // this._nav.navigate(['/dashboard'])
+        Swal.fire({
+          type: 'success',
+          title: 'You have successfully logged ',
+          showConfirmButton: false,
+          timer: 1500, width: '512px',
+        });
+
+      }
+    );
+
+  }
 }

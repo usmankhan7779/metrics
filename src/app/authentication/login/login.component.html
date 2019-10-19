@@ -4,17 +4,16 @@
     <form role="form"   #f="ngForm" novalidate     >
       <div class="form-group"    >
         <input type="email" class="form-control" [(ngModel)]="model.username"
-        aria-describedby="emailHelp" 
+        aria-describedby="emailHelp" name="username"
         placeholder="Informe sua E-mail">
        
     
         <!-- id="exampleInputEmail1"                    -->
        
-        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-      </div>
+       </div>
       <div class="form-group"    >
         <input type="password" class="form-control"
-        [(ngModel)]="model.password"   placeholder="Informe sua Senha">
+        [(ngModel)]="model.password"  name="password"  placeholder="Informe sua Senha">
         <!-- id="exampleInputPassword1" -->
      
      
